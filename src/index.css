@@ -1,0 +1,241 @@
+Reset and global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 40px;
+  background-color: rgb(12, 6, 18);
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('./image/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 50px;
+  color: wheat;
+  text-align: center;
+}
+
+.text-gradient {
+  color: rgb(114, 245, 245);
+}
+
+.header-image {
+  display: block;
+  max-width: 900px;
+  max-height: 900px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Search bar styles */
+.search {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+input.search-bar {
+  background-image: url(./image/search.webp);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding: 20px 50px;
+  height: 10px;
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 100%;
+  max-width: 600px;
+  color: white;
+  background-color: transparent;
+}
+
+/* Wrapper layout */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Trending Movies */
+.trending-movies {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.trending-movies h2 {
+  font-size: 3rem;
+  color: rgb(94, 232, 140);
+  margin-bottom: 0.5rem;
+}
+
+.trending-movies ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.trending-movies li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 120px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.trending-movies img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+/* All Movies */
+.all-movies {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.all-movies h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: rgb(164, 244, 244);
+}
+
+.all-movies ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.all-movies li {
+  list-style: none;
+  padding: 0;
+}
+
+/* Error & loading text */
+.text-red-500 {
+  color: red;
+  margin-top: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
+  color: white;
+}
+
+/* Movie Card */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 12px;
+  width: 200px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.mt-4 {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.movie-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #111111;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+  color: #6b0b50;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratings span {
+  color: #e3f216; 
+  font-size: 16px;
+}
+
+.lang,
+.year {
+  font-weight: 500;
+}
+
+/* Fallback card styles (optional demo version) */
+.card-container {
+  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1024px;
+}
+
+.card {
+  border: 1px solid grey;
+  padding: 20px;
+  margin: 10px;
+  background-color: rgb(22, 21, 32);
+  border-radius: 10px;
+  min-height: 100px;
+}
+
+button {
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}
+
