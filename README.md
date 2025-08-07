@@ -26,12 +26,13 @@ A modern and responsive React-based web application to search and explore trendi
 git clone https://github.com/your-username/movie-explorer.git
 cd movie-explorer
 
-### 2. Dependency
+### **2. Dependency**
 
+```bash
 npm install
 
 
-### 3. Setup Environment Variables
+###**3. Setup Environment Variables**
 Create a .env file in the root directory with the following variables:
 
 - **VITE_TMDB_API_KEY**= your_tmdb_bearer_token
@@ -41,7 +42,8 @@ Create a .env file in the root directory with the following variables:
 - **VITE_APPWRITE_COLLECTION_ID**= your_collection_id
 
 
-### 4. Start the Development Server
+### **4. Start the Development Server**
 
+```bash
 npm run dev
 
