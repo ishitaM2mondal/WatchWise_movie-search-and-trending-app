@@ -22,16 +22,16 @@ A modern and responsive React-based web application to search and explore trendi
 
 ### 1. Clone the repository
 
-`"
+`
 git clone https://github.com/your-username/movie-explorer.git
 cd movie-explorer
-`"
+`
 
 ### **2. Dependency**
 
-`"
+`
 npm install
-`"
+`
 
 ### **3. Setup Environment Variables**
 Create a .env file in the root directory with the following variables:
@@ -45,6 +45,6 @@ Create a .env file in the root directory with the following variables:
 
 ### **4. Start the Development Server**
 
-`"
+`
 npm run dev
-`"
+`
