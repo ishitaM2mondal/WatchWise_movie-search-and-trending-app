@@ -36,11 +36,11 @@ npm install
 ### **3. Setup Environment Variables**
 Create a .env file in the root directory with the following variables:
 ```
-- **VITE_TMDB_API_KEY**= your_tmdb_bearer_token
-- **VITE_APPWRITE_ENDPOINT**= https://cloud.appwrite.io/v1
-- **VITE_APPWRITE_PROJECT**= your_project_id
-- **VITE_APPWRITE_DATABASE_ID**= your_database_id
-- **VITE_APPWRITE_COLLECTION_ID**= your_collection_id
+VITE_TMDB_API_KEY= your_tmdb_bearer_token
+VITE_APPWRITE_ENDPOINT= https://cloud.appwrite.io/v1
+VITE_APPWRITE_PROJECT= your_project_id
+VITE_APPWRITE_DATABASE_ID= your_database_id
+VITE_APPWRITE_COLLECTION_ID= your_collection_id
 ```
 
 ### **4. Start the Development Server**
