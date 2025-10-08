@@ -2,11 +2,14 @@ import { Client, Databases, ID, Query } from 'appwrite'
 
 const PROJECT_ID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
 const DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID;
-const COLLECTION_ID = import.meta.env.VITE_APPWRITE_COLLECTION_ID;
+const TABLE_ID = import.meta.env.VITE_APPWRITE_TABLE_ID;
+// const ENDPOINT_ID = import.meta.env.VITE_APPWRITE_ENDPOINT;
+// const API_ID = import.meta.env.VITE_APPWRITE_API_KEY ;
 
 const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1')
+    .setEndpoint("https://cloud.appwrite.io/v1")
     .setProject(PROJECT_ID)
+    // .setKey(API_ID);  // 🔑 Required for server SDK
 
 //which functionality we are going to use
 const database = new Databases(client);
@@ -14,21 +17,22 @@ const database = new Databases(client);
 export const updateSearchCount = async (searchTerm, movie) => {
     //1.Use Appwrite SDK/API to check if the search term exists in the database
     try {
-        const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+        const result = await database.listDocuments(DATABASE_ID, TABLE_ID, [
             Query.equal('searchTerm', searchTerm),
         ]);
 
         //2.if it does,update the count
         if (result.documents.length > 0) {
             const doc = result.documents[0];
-            await database.updateDocument(DATABASE_ID, COLLECTION_ID, doc.$id, {
+            await database.updateDocument(DATABASE_ID, TABLE_ID, doc.$id, {
                 count: doc.count + 1,
             });
             //3.if not,create a new document with the search term and count as 1
           } else {
-            await database.createDocument(DATABASE_ID, COLLECTION_ID, ID.unique(), {
+            await database.createDocument(DATABASE_ID, TABLE_ID, ID.unique(), {
                 searchTerm,
                 count: 1,
+                title: movie.title,
                 movie_id: movie.id,
                 poster_url: movie.poster_path
                 ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
@@ -42,7 +46,7 @@ export const updateSearchCount = async (searchTerm, movie) => {
 };
 export const getTrendingMovies = async () => {
     try {
-        const result = await database.listDocuments(DATABASE_ID, COLLECTION_ID, [
+        const result = await database.listDocuments(DATABASE_ID, TABLE_ID, [
             Query.limit(5),
             Query.orderDesc('count'),
         ]);

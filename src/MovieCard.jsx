@@ -1,15 +1,15 @@
+
 import React from 'react';
 
 
-const MovieCard = ({ movie:
-    {title, vote_average, poster_path, release_date, original_language}
-    }) => {
+const MovieCard = ({ movie }) => {
+    const { title, vote_average, poster_path, release_date, original_language, searchTerm } = movie;
     return(
-    <div className="movie-card">
-        <img src={poster_path ? `https://image.tmdb.org/t/p/w200/${poster_path}`:'./image/placeholder.jpg'} />
+    <li className="movie-card">
+        <img src={poster_path ? `https://image.tmdb.org/t/p/w200/${poster_path}`:'/image/placeholder.jpg'} />
 
         <div className="mt-4">
-            <h3>{title}</h3>
+            <h3>{title || searchTerm || 'Untitled'}</h3>
             <div className="content">
                 <div className="ratings">
                     <span>⭐</span>
@@ -17,14 +17,13 @@ const MovieCard = ({ movie:
                 </div>
                 <span>.</span>
                 <p className="lang">{original_language}</p>
-
                 <span>.</span>
                 <p className="year">
                     {release_date ? release_date.split('-')[0] : 'N/A'}
                 </p>
             </div>
         </div>
-    </div>
-    );
+    </li>
+    )
 };
 export default MovieCard;
